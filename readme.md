@@ -1,5 +1,25 @@
 # E-Commence Project
 
+## Setup
+
+'
+mkdir templates static static/css static/js static/img
+touch readme.md env.py templates/base.html
+echo -e "eny.py\n*.sqlite3" >> .gitignore
+sudo pip3 install django-forms-bootstrap
+'
+
+## env.py
+
+'
+import os
+
+os.environ["DEVELOPMENT"] = "Yes"
+os.environ["HOSTNAME"] = "127.0.0.1"
+os.environ["SECRET_KEY"] = "2+=6ylxler=d2&fmnhj4pp&+z)b+axy%avrtju--t&!5v=6*+)"
+os.environ["DATABASE_URL"] = "postgres://txbitamqocrnlg:20f02f79d9e34004d5381243e11f0a394b5bcf249d1509814779644c77fb9331@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com:5432/db1cei3144aff4"
+
+'
 MyConfig
 alias run="python3 manage.py runserver"
 alias migrate="python3 manage.py migrate"
@@ -11,8 +31,90 @@ alias makeenv="echo import os > env.py"
 alias astart="django-admin startapp "
 alias makemigrate="python3 manage.py makemigrations"
 
+## Start project
+'django-admin startproject' --> My shortcut is 'pstart'
+
+so you would use 'pstart ecommence .'
+
+You may need to make the manage.py file executable
+
+'chmod +x manage.py'
+
 ## Add sqlite3 to gitignore
+
+This may be useless after the additions I have made above.
 
 '
 echo '*.sqlite3' >> .gitignore
 '
+
+## Copy previous Project over from 'django authentication'
+
+Copy the 'accounts' folder over and place in this project.
+Copy the 'css' folder from the 'static' folder.
+
+## Update Settings.py
+
+Because we have copied accounts app we need to update the settings.py
+
+Add to INSTALLED_APPS -> 'accounts',
+above the new entry add (This should been install already with 'sudo pip3 install django-forms-bootstrap')
+'    
+    'django_forms_bootstrap',
+'
+Since we have reused the accounts,
+
+We have to add this to just below the AUTH_PASSWORD_VALIDATORS block
+
+'
+AUTHENITCATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.CaseInsensitive',
+    'accounts.backend.EmailAuth'
+]
+'
+
+we have updated the 'backends.py'
+
+Below the STATIC SECTION
+
+### Extra Static Section
+
+I have added the following
+'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+'
+
+add
+
+'
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+'
+
+In the TEMPLATES block change the 'DIRS' to
+
+'
+'DIRS': [os.path.join(BASE_DIR, 'templates')],
+'
+
+This tells django that multiple templates folders contain templates.
+
+## Sorting the urls.py (ecommence)
+
+This is what the file should contain.
+
+'
+from django.conf.urls import url, include
+from django.contrib import admin
+from accounts import urls as urls_accounts
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include(urls_accounts)),
+'
+
+
+# Run the server and goto 
+
+hostname/accounts/register
