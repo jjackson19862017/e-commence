@@ -142,3 +142,10 @@ Make a templates folder and populate with index.html
 Because you cannot have an eccommence site with out products.  This will house all our core logic so that we can upload it to our webpage.
 
 'astart products'
+
+# Creating a Cart App
+
+'astart cart'
+'touch cart/context.py'
+
+The difference between Cart and Products is the context.py
