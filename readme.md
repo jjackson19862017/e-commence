@@ -7,6 +7,7 @@ mkdir templates static static/css static/js static/img
 touch readme.md env.py templates/base.html
 echo -e "eny.py\n*.sqlite3" >> .gitignore
 sudo pip3 install django-forms-bootstrap
+sudo pip3 install Pillow
 '
 
 ## env.py
@@ -118,3 +119,26 @@ urlpatterns = [
 # Run the server and goto 
 
 hostname/accounts/register
+
+# Creating an Home App
+
+These are pages not relating to the E-Commence App.
+
+'astart home'
+
+Make a templates folder and populate with index.html
+
+'mkdir home/templates'
+'touch home/templates/index.html'
+
+## index.html
+
+'
+{% extends 'base.html' %} {% block content %} {% endblock %}
+'
+
+# Creating an Products App
+
+Because you cannot have an eccommence site with out products.  This will house all our core logic so that we can upload it to our webpage.
+
+'astart products'
