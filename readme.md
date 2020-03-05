@@ -268,3 +268,5 @@ sudo pip3 install dj-database-url
 'sudo pip3 install boto3'
 
 'python3 manage.py collectstatic'
+
+# Custom Storages
