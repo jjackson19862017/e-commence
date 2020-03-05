@@ -182,3 +182,24 @@ touch cart/templates/cart.html
 
 'astart search'
 'touch search/urls.py'
+
+# Styling the App
+
+First we need some font-awesome icons.
+
+goto "https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself"
+
+Download the folder and unzip.
+
+Create a folder in the 'static' folder called 'font-awesome'
+
+'
+mkdir static/font-awesome
+mkdir static/font-awesome/css static/font-awesome/fonts
+'
+
+Then copy the css and fonts folder from the downloaded and unzipped file.
+
+# Custom.css
+
+Change our own css file.
