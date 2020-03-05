@@ -270,3 +270,5 @@ sudo pip3 install dj-database-url
 'python3 manage.py collectstatic'
 
 # Custom Storages
+
+# Icons
