@@ -253,3 +253,9 @@ touch checkout/templates/checkout.html
 '
 touch static/js/stripe.js
 '
+
+# Heroku Deployment
+
+'
+sudo pip3 install dj-database-url
+'
