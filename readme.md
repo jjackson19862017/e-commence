@@ -247,3 +247,9 @@ Create templates folder in checkout folder and create checkout.html
 mkdir checkout/templates
 touch checkout/templates/checkout.html
 '
+
+# Stripe Javascript
+
+'
+touch static/js/stripe.js
+'
