@@ -181,3 +181,4 @@ touch cart/templates/cart.html
 # Make a Search App
 
 'astart search'
+'touch search/urls.py'
