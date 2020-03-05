@@ -259,3 +259,12 @@ touch static/js/stripe.js
 '
 sudo pip3 install dj-database-url
 '
+
+# Setupping AWS S3
+
+' sudo pip3 install django-storages
+'
+
+'sudo pip3 install boto3'
+
+'python3 manage.py collectstatic'
