@@ -8,6 +8,7 @@ touch readme.md env.py templates/base.html
 echo -e "eny.py\n*.sqlite3" >> .gitignore
 sudo pip3 install django-forms-bootstrap
 sudo pip3 install Pillow
+sudo pip3 install stripe
 '
 
 ## env.py
@@ -203,3 +204,12 @@ Then copy the css and fonts folder from the downloaded and unzipped file.
 # Custom.css
 
 Change our own css file.
+
+# Install Stripe.API
+
+'
+sudo pip3 install stripe
+'
+
+Goto www.stripe.com
+and setup and account if not already done so.
