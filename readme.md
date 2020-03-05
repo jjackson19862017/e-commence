@@ -146,6 +146,38 @@ Because you cannot have an eccommence site with out products.  This will house a
 # Creating a Cart App
 
 'astart cart'
-'touch cart/context.py'
+'touch cart/contexts.py'
 
-The difference between Cart and Products is the context.py
+The difference between Cart and Products is the contexts.py
+
+# Updated the views.py in cart
+
+This allows you to add a quantity to the same item.
+
+'
+def add_to_cart(request, id):
+    """Add a quantity of the specified product to the cart"""
+    quantity = int(request.POST.get('quantity'))
+
+    cart = request.session.get('cart', {})
+    if id in cart:
+        cart[id] = int(cart[id]) + quantity      
+    else:
+        cart[id] = cart.get(id, quantity) 
+
+    request.session['cart'] = cart
+    return redirect(reverse('index'))
+'
+
+# Making the Cart.html
+
+We can add items to the cart but not actually see them, so create a 'templates' folder in cart.
+
+'
+mkdir cart/templates
+touch cart/templates/cart.html
+'
+
+# Make a Search App
+
+'astart search'
