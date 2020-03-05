@@ -225,3 +225,10 @@ After we have created the Models, we have to do a make migration and migrate
 'makemigrate'
 'migrate checkout'
 
+# Checkout App Forms
+
+In checkout create forms.py
+
+'
+touch checkout/forms.py
+'
