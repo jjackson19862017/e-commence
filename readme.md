@@ -213,3 +213,15 @@ sudo pip3 install stripe
 
 Goto www.stripe.com
 and setup and account if not already done so.
+
+# Create Checkout
+
+'
+astart checkout
+'
+
+After we have created the Models, we have to do a make migration and migrate
+
+'makemigrate'
+'migrate checkout'
+
