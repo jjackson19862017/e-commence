@@ -232,3 +232,18 @@ In checkout create forms.py
 '
 touch checkout/forms.py
 '
+
+# Checkout HTML
+
+Create urls.py in checkout folder
+
+'
+touch checkout/urls.py
+'
+
+Create templates folder in checkout folder and create checkout.html
+
+'
+mkdir checkout/templates
+touch checkout/templates/checkout.html
+'
